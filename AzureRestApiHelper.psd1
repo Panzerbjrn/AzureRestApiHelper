@@ -7,15 +7,11 @@
 #
 
 @{
-
 	# Script module or binary module file associated with this manifest.
 	RootModule = 'AzureRestApiHelper.psm1'
 
 	# Version number of this module.
 	ModuleVersion = '0.0.1'
-
-	# Supported PSEditions
-	# CompatiblePSEditions = @()
 
 	# ID used to uniquely identify this module
 	GUID = '9908c707-fbbc-465f-b4d4-06c781d22bb5'
@@ -24,7 +20,7 @@
 	Author = 'Lars Panzerbjørn'
 
 	# Company or vendor of this module
-	CompanyName = 'Unknown'
+	CompanyName = 'Ordo Ursus'
 
 	# Copyright statement for this module
 	Copyright = '(c) Lars Panzerbjørn. All rights reserved.'
@@ -35,24 +31,17 @@
 	# Minimum version of the PowerShell engine required by this module
 	PowerShellVersion = '5.0'
 
-	# Modules that must be imported into the global environment prior to importing this module
-	# RequiredModules = @()
-
 	# Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
 	FunctionsToExport = '*'
 
 	# Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 	CmdletsToExport = @()
 
-	# Variables to export from this module
-	VariablesToExport = '*'
-
 	# Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
-	AliasesToExport = '*'
+	AliasesToExport = @()
 
 	# Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
 	PrivateData = @{
-
 		PSData = @{
 
 			# Tags applied to this module. These help with module discovery in online galleries.
