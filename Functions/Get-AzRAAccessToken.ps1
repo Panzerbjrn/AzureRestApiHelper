@@ -33,7 +33,6 @@ Function Get-AzRAAccessToken{
 	.NOTES
 		Author:				Lars Panzerbjørn
 		Creation Date:		2021.07.30
-		Purpose/Change: Initial script development
 #>
 	[CmdletBinding()]
 	param
