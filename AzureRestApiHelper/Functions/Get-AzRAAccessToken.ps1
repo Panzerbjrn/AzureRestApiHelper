@@ -10,8 +10,6 @@ Function Get-AzRAAccessToken{
 		$TenantId = "c123456f-a1cd-6fv7-bh73-123r5t6y7u8i9"
 		$ClientId = '1a2s3d4d4-dfhg-4567-d5f6-h4f6g7k933ae'
 		$ClientSecret = '36._ERF567.6FB.XFGY75D-35TGasdrvk467'
-		$Resource = "https://management.core.windows.net/"
-		$SubscriptionId = "1ab3456hg-45g6-864c-34ft-jyki8765fdf3"
 
 		Get-AzRAAccessToken -TenantID $TenantID -ClientID $ClientId -ClientSecret $ClientSecret
 
@@ -48,10 +46,10 @@ Function Get-AzRAAccessToken{
 	}
 	PROCESS{
 		$Body = @{
-			'resource'= $ARMResource
-			'client_id' = $ClientID
-			'grant_type' = 'client_credentials'
-			'client_secret' = $ClientSecret
+			Grant_Type = "client_credentials"
+			resource = $ARMResource
+			client_id = $ClientID
+			client_secret = $ClientSecret
 		}
 
 		$InvokeRestMethodSplat = @{
