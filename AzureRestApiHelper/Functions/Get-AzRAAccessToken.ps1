@@ -66,4 +66,3 @@ Function Get-AzRAAccessToken{
 		Return "Bearer " + ($Token.access_token).ToString()
 	}
 }
-
