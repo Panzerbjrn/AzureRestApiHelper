@@ -4,7 +4,7 @@ Function Get-AzRAAccessToken{
 		Gets the bearer token needed for REST API calls.
 
 	.DESCRIPTION
-		Gets the bearer token needed for REST API calls.
+		Gets the bearer token needed for REST API calls. This token is saved to the script scope.
 
 	.EXAMPLE
 		$TenantId = "c123456f-a1cd-6fv7-bh73-123r5t6y7u8i9"
@@ -12,6 +12,17 @@ Function Get-AzRAAccessToken{
 		$ClientSecret = '36._ERF567.6FB.XFGY75D-35TGasdrvk467'
 
 		Get-AzRAAccessToken -TenantID $TenantID -ClientID $ClientId -ClientSecret $ClientSecret
+		
+		This command will produce an access token.
+
+	.EXAMPLE
+		$TenantId = "c123456f-a1cd-6fv7-bh73-123r5t6y7u8i9"
+		$ClientId = '1a2s3d4d4-dfhg-4567-d5f6-h4f6g7k933ae'
+		$ClientSecret = '36._ERF567.6FB.XFGY75D-35TGasdrvk467'
+
+		$AccessToken = Get-AzRAAccessToken -TenantID $TenantID -ClientID $ClientId -ClientSecret $ClientSecret
+		
+		This command will produce an access token and save it to a variable.
 
 	.PARAMETER TenantID
 		This is the tenant ID of your Azure subscription.
@@ -60,10 +71,10 @@ Function Get-AzRAAccessToken{
 			URI = $TokenEndpoint
 		}
 
-		$Token = Invoke-RestMethod @InvokeRestMethodSplat
+		$Script:TokenResponse = Invoke-RestMethod @InvokeRestMethodSplat
 	}
 	END{
-		Return "Bearer " + ($Token.access_token).ToString()
+		Return $TokenResponse
 	}
 }
 
