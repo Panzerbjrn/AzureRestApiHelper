@@ -21,17 +21,18 @@ Function Get-AzRAAccessToken{
 		$ClientSecret = '36._ERF567.6FB.XFGY75D-35TGasdrvk467'
 
 		$AccessToken = Get-AzRAAccessToken -TenantID $TenantID -ClientID $ClientId -ClientSecret $ClientSecret
+		$AccessToken
 		
-		This command will produce an access token and save it to a variable.
+		This command will produce an access token and save it to a variable. It then displays the token on screen
 
 	.PARAMETER TenantID
 		This is the tenant ID of your Azure subscription.
 
 	.PARAMETER ClientID
-		This is the ClientID of the Service Principal
+		This is the ClientID of the Service Principal. Also called Application ID.
 
 	.PARAMETER ClientSecret
-		This is the Client secret that was generated when you secured the Service Principal
+		This is the Client Secret/Password that was generated when you secured the Service Principal
 
 	.INPUTS
 		Input is from command line or called from a script.
@@ -72,6 +73,7 @@ Function Get-AzRAAccessToken{
 		}
 
 		$Script:TokenResponse = Invoke-RestMethod @InvokeRestMethodSplat
+		$TokenResponse | Add-Member NoteProperty ExpiresOn(ConvertFrom-UnixTimestamp -Seconds 1630224094)
 	}
 	END{
 		Return $TokenResponse
