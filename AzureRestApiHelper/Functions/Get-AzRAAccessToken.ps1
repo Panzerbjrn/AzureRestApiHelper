@@ -73,7 +73,7 @@ Function Get-AzRAAccessToken{
 		}
 
 		$Script:TokenResponse = Invoke-RestMethod @InvokeRestMethodSplat
-		$TokenResponse | Add-Member NoteProperty ExpiresOn(ConvertFrom-UnixTimestamp -Seconds 1630224094)
+		$TokenResponse | Add-Member NoteProperty ExpiresOn(ConvertFrom-UnixTimestamp -Seconds $TokenResponse.expires_on)
 	}
 	END{
 		Return $TokenResponse
