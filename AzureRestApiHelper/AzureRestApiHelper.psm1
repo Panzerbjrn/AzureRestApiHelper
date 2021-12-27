@@ -1,13 +1,9 @@
 ﻿#region Script Header
-#	Thought for the day:
 #	NAME: AzureRestApiHelper.psm1
 #	AUTHOR: Lars Panzerbjørn
 #	CONTACT: GitHub: Panzerbjrn / Twitter: Panzerbjrn
 #	DATE: 2021.07.17
 #	VERSION: 0.1 - 2021.07.17 - Module Created with Create-NewModuleStructure by Lars Panzerbjørn
-#
-#	SYNOPSIS:
-#
 #
 #	DESCRIPTION:
 #	A module for helping with Azure REST API calls
