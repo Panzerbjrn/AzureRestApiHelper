@@ -11,7 +11,7 @@
 	RootModule = 'AzureRestApiHelper.psm1'
 
 	# Version number of this module.
-	ModuleVersion = '0.0.2'
+	ModuleVersion = '0.0.3'
 
 	# ID used to uniquely identify this module
 	GUID = '9908c707-fbbc-465f-b4d4-06c781d22bb5'
