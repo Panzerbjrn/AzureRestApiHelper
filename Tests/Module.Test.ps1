@@ -26,7 +26,7 @@ Describe "General project validation: $ModuleName" {
 	$Scripts = Get-ChildItem $ProjectRoot -Include *.ps1 -Exclude *WiP.ps1 -Recurse
 
 	# TestCases are splatted to the script
-	$TestCase = $Scripts | Foreach-Object {@{file=$_}}
+	$TestCase = $Scripts | ForEach-Object {@{file=$_}}
 	It "Script <file> should be valid powershell" -TestCases $TestCase {
 		param($File)
 

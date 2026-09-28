@@ -44,8 +44,7 @@ Function Get-AzRASubscriptions{
 		IF(($AccessToken) -or ($TokenResponse)){
 			IF($AccessToken){$Headers = @{authorization = "Bearer $($AccessToken.access_token)"}}
 			IF(!($AccessToken)){$Headers = @{authorization = "Bearer $($TokenResponse.access_token)"}}
-		}
-		ELSE {THROW "Please provide access token"}
+		}ELSE{THROW "Please provide access token"}
 	}
 
 	PROCESS{
