@@ -22,7 +22,7 @@ Function Add-AzRATags{
 
 	.PARAMETER Tags
 		This is a hashtable collection of tags to add. These must be in a KeyValue pair collection.
-		
+
 	.INPUTS
 		Input is from command line or called from a script.
 
@@ -37,7 +37,7 @@ Function Add-AzRATags{
 	param
 	(
 		[Parameter(mandatory)][hashtable]$Tags,
-		
+
 		[Parameter(Mandatory,HelpMessage='What Subscription ID would you like to target?')]
 		[string]$SubscriptionID,
 
@@ -55,7 +55,7 @@ Function Add-AzRATags{
 	BEGIN{
 		$BaseUri = 'https://management.azure.com'
 		$API = '/providers/Microsoft.Resources/tags/default?api-version=2021-04-01'
-		
+
 	}
 
 	PROCESS{

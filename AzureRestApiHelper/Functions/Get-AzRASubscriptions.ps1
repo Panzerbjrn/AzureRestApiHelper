@@ -13,12 +13,12 @@ Function Get-AzRASubscriptions{
 
 		$AccessToken = Get-AzRAAccessToken -TenantID $TenantID -ClientID $ClientId -ClientSecret $ClientSecret
 		Get-AzRASubscriptions -
-		
+
 		This command will produce an access token and save it to a variable.
 
 	.EXAMPLE
 		$AccessToken = Get-AzRAAccessToken -TenantID $TenantID -ClientID $ClientId -ClientSecret $ClientSecret
-		
+
 		Get-AzRASubscriptions
 
 	.PARAMETER AccessToken
@@ -41,7 +41,7 @@ Function Get-AzRASubscriptions{
 	)
 
 	BEGIN{
-		IF (($AccessToken) -or ($TokenResponse)){
+		IF(($AccessToken) -or ($TokenResponse)){
 			IF($AccessToken){$Headers = @{authorization = "Bearer $($AccessToken.access_token)"}}
 			IF(!($AccessToken)){$Headers = @{authorization = "Bearer $($TokenResponse.access_token)"}}
 		}

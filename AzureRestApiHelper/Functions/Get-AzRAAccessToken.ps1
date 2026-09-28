@@ -12,7 +12,7 @@ Function Get-AzRAAccessToken{
 		$ClientSecret = '36._ERF567.6FB.XFGY75D-35TGasdrvk467'
 
 		Get-AzRAAccessToken -TenantID $TenantID -ClientID $ClientId -ClientSecret $ClientSecret
-		
+
 		This command will produce an access token.
 
 	.EXAMPLE
@@ -22,7 +22,7 @@ Function Get-AzRAAccessToken{
 
 		$AccessToken = Get-AzRAAccessToken -TenantID $TenantID -ClientID $ClientId -ClientSecret $ClientSecret
 		$AccessToken
-		
+
 		This command will produce an access token and save it to a variable. It then displays the token on screen
 
 	.PARAMETER TenantID

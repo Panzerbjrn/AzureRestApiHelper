@@ -11,11 +11,11 @@ Function ConvertFrom-UnixTimestamp
 		[string]$Milliseconds
 	)
 
-	IF ($Seconds)
+	IF($Seconds)
 	{
 		(Get-Date -Date "01/01/1970").AddSeconds($Seconds)
 	}
-	IF ($MilliSeconds)
+	IF($MilliSeconds)
 	{
 		(Get-Date -Date "01/01/1970").AddMilliseconds($MilliSeconds)
 	}

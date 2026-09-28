@@ -9,12 +9,12 @@ Function Get-AzRAResourceGroups{
 	.EXAMPLE
 		$AccessToken = Get-AzRAAccessToken -TenantID $TenantID -ClientID $ClientId -ClientSecret $ClientSecret
 		Get-AzRAResourceGroups -AccessToken $AccessToken
-		
+
 		This command will produce an access token and save it to a variable.
 
 	.EXAMPLE
 		$AccessToken = Get-AzRAAccessToken -TenantID $TenantID -ClientID $ClientId -ClientSecret $ClientSecret
-		
+
 		Get-AzRASubscriptions
 
 	.PARAMETER AccessToken
@@ -37,7 +37,7 @@ Function Get-AzRAResourceGroups{
 	)
 
 	BEGIN{
-		IF (($AccessToken) -or ($TokenResponse)){
+		IF(($AccessToken) -or ($TokenResponse)){
 			IF($AccessToken){$Headers = @{authorization = "Bearer $($AccessToken.access_token)"}}
 			IF(!($AccessToken)){$Headers = @{authorization = "Bearer $($TokenResponse.access_token)"}}
 		}

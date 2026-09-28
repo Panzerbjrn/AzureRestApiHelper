@@ -5,16 +5,16 @@ $ModuleRoot = $(gci $ModuleRoot).Fullname
 $ManifestRoot = "$ProjectRoot\$ModuleName.psd1"
 
 BeforeAll {
-	Try{
+	TRY{
 		Import-module PSScriptAnalyzer -ErrorAction STOP
 	}
-	Catch{
+	CATCH{
 		Install-Module -Name PSScriptAnalyzer
 	}
 	IF(!(Get-Module PSScriptAnalyzer)){
 		Install-Module -Name PSScriptAnalyzer -Force
 	}
-	
+
 	#$Scripts = Get-ChildItem -Include *.ps1 -Exclude *WiP.ps1 -Recurse
 	$ProjectRoot = (Resolve-Path "$PSScriptRoot\..").path
 	$ModuleName = Split-Path $ProjectRoot -Leaf
@@ -36,7 +36,7 @@ Describe "General project validation: $ModuleName" {
 		$Errors = $null
 		$null = [System.Management.Automation.PSParser]::Tokenize($Contents, [ref]$Errors)
 		$Errors.Count | Should -Be 0
-		
+
 	}
 	It "Script <file> should exist" -TestCases $TestCase {
 		param($File)
@@ -67,7 +67,7 @@ Describe "General project validation: $ModuleName" {
 	It "Test-Path $Moduleroot should be True" {
 		Test-Path $Moduleroot | Should -Be $True
 	}
-	
+
 	It "Test-Path $ManifestRoot should be True" {
 		Test-Path $ManifestRoot | Should -Be $True
 	}
